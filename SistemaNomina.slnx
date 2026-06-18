@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="InterfazNomina/InterfazNomina.csproj" />
+  <Project Path="LibreriaNomina/LibreriaNomina.csproj" />
+</Solution>
