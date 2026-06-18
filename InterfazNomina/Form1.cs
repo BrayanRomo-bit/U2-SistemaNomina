@@ -14,26 +14,30 @@ namespace InterfazNomina
             _miEmpresa = new Empresa();
         }
 
+        // Método auxiliar para actualizar el ListBox
         private void ActualizarListaEmpleados()
         {
             listBoxEmpleados.Items.Clear();
             foreach (Empleado empleadoActual in _miEmpresa.ObtenerEmpleados())
             {
                 double salarioTotal = empleadoActual.CalcularSalarioTotal();
-                string mensajeLista = String.Format("{0} - Pago x Hora: ${1} - Extras: {2}h - Total: ${3}",
+                string mensajeLista = String.Format("{0} - P/Hora: ${1} - Horas: {2}h - Extras: {3}h - Total: ${4}",
                                                     empleadoActual.Nombre,
                                                     empleadoActual.PrecioPorHora,
+                                                    empleadoActual.HorasTrabajadas,
                                                     empleadoActual.HorasExtras,
                                                     salarioTotal);
                 listBoxEmpleados.Items.Add(mensajeLista);
             }
         }
 
+        // Limpiar cajas de texto
         private void LimpiarCampos()
         {
             textBoxNombre.Clear();
             textBoxPrecioHora.Clear();
-            textBoxHoras.Clear();
+            textBoxHorasTrabajadas.Clear();
+            textBoxHorasExtras.Clear();
             textBoxNombre.Focus();
         }
 
@@ -41,14 +45,16 @@ namespace InterfazNomina
         {
             string nombre = textBoxNombre.Text;
             string textoPrecio = textBoxPrecioHora.Text;
-            string textoHoras = textBoxHoras.Text;
+            string textoHorasTrabajadas = textBoxHorasTrabajadas.Text;
+            string textoHorasExtras = textBoxHorasExtras.Text;
 
             try
             {
                 double precioPorHora = Convert.ToDouble(textoPrecio);
-                int horasExtras = Convert.ToInt32(textoHoras);
+                int horasTrabajadas = Convert.ToInt32(textoHorasTrabajadas);
+                int horasExtras = Convert.ToInt32(textoHorasExtras);
 
-                Empleado nuevoEmpleado = new Empleado(nombre, precioPorHora, horasExtras);
+                Empleado nuevoEmpleado = new Empleado(nombre, precioPorHora, horasTrabajadas, horasExtras);
                 _miEmpresa.AgregarEmpleado(nuevoEmpleado);
 
                 ActualizarListaEmpleados();
@@ -58,7 +64,7 @@ namespace InterfazNomina
             }
             catch (FormatException)
             {
-                MessageBox.Show("Error: Por favor, ingrese números válidos para el precio por hora y las horas extras.", "Error de Formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: Por favor, ingrese números válidos en los campos de precio y horas.", "Error de Formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception excepcionGeneral)
             {
@@ -78,12 +84,13 @@ namespace InterfazNomina
             try
             {
                 double nuevoPrecio = Convert.ToDouble(textBoxPrecioHora.Text);
-                int nuevasHoras = Convert.ToInt32(textBoxHoras.Text);
+                int nuevasHorasTrabajadas = Convert.ToInt32(textBoxHorasTrabajadas.Text);
+                int nuevasHorasExtras = Convert.ToInt32(textBoxHorasExtras.Text);
 
                 Empleado empleadoSeleccionado = _miEmpresa.ObtenerEmpleadoPorIndice(indiceSeleccionado);
                 if (empleadoSeleccionado != null)
                 {
-                    empleadoSeleccionado.ActualizarDatos(nuevoPrecio, nuevasHoras);
+                    empleadoSeleccionado.ActualizarDatos(nuevoPrecio, nuevasHorasTrabajadas, nuevasHorasExtras);
                     empleadoSeleccionado.Nombre = textBoxNombre.Text;
 
                     ActualizarListaEmpleados();
@@ -126,7 +133,8 @@ namespace InterfazNomina
                 {
                     textBoxNombre.Text = empleadoSeleccionado.Nombre;
                     textBoxPrecioHora.Text = empleadoSeleccionado.PrecioPorHora.ToString();
-                    textBoxHoras.Text = empleadoSeleccionado.HorasExtras.ToString();
+                    textBoxHorasTrabajadas.Text = empleadoSeleccionado.HorasTrabajadas.ToString();
+                    textBoxHorasExtras.Text = empleadoSeleccionado.HorasExtras.ToString();
                 }
             }
         }
