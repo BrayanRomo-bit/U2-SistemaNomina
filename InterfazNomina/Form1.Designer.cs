@@ -17,102 +17,146 @@ namespace InterfazNomina
 
         private void InitializeComponent()
         {
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.labelSalario = new System.Windows.Forms.Label();
-            this.textBoxSalario = new System.Windows.Forms.TextBox();
-            this.labelHoras = new System.Windows.Forms.Label();
-            this.textBoxHoras = new System.Windows.Forms.TextBox();
-            this.botonAgregar = new System.Windows.Forms.Button();
-            this.listBoxEmpleados = new System.Windows.Forms.ListBox();
-            this.SuspendLayout();
-            
+            labelNombre = new Label();
+            textBoxNombre = new TextBox();
+            labelPrecioHora = new Label();
+            textBoxPrecioHora = new TextBox();
+            labelHoras = new Label();
+            textBoxHoras = new TextBox();
+            botonAgregar = new Button();
+            botonModificar = new Button();
+            botonEliminar = new Button();
+            listBoxEmpleados = new ListBox();
+            SuspendLayout();
+            // 
             // labelNombre
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(30, 30);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(54, 15);
-            this.labelNombre.TabIndex = 0;
-            this.labelNombre.Text = "Nombre:";
-            
+            // 
+            labelNombre.AutoSize = true;
+            labelNombre.Location = new Point(34, 40);
+            labelNombre.Name = "labelNombre";
+            labelNombre.Size = new Size(67, 20);
+            labelNombre.TabIndex = 0;
+            labelNombre.Text = "Nombre:";
+            // 
             // textBoxNombre
-            this.textBoxNombre.Location = new System.Drawing.Point(130, 27);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(150, 23);
-            this.textBoxNombre.TabIndex = 1;
-            
-            // labelSalario
-            this.labelSalario.AutoSize = true;
-            this.labelSalario.Location = new System.Drawing.Point(30, 70);
-            this.labelSalario.Name = "labelSalario";
-            this.labelSalario.Size = new System.Drawing.Size(71, 15);
-            this.labelSalario.TabIndex = 2;
-            this.labelSalario.Text = "Salario Base:";
-            
-            // textBoxSalario
-            this.textBoxSalario.Location = new System.Drawing.Point(130, 67);
-            this.textBoxSalario.Name = "textBoxSalario";
-            this.textBoxSalario.Size = new System.Drawing.Size(150, 23);
-            this.textBoxSalario.TabIndex = 3;
-            
+            // 
+            textBoxNombre.Location = new Point(149, 36);
+            textBoxNombre.Margin = new Padding(3, 4, 3, 4);
+            textBoxNombre.Name = "textBoxNombre";
+            textBoxNombre.Size = new Size(171, 27);
+            textBoxNombre.TabIndex = 1;
+            // 
+            // labelPrecioHora
+            // 
+            labelPrecioHora.AutoSize = true;
+            labelPrecioHora.Location = new Point(34, 93);
+            labelPrecioHora.Name = "labelPrecioHora";
+            labelPrecioHora.Size = new Size(117, 20);
+            labelPrecioHora.TabIndex = 2;
+            labelPrecioHora.Text = "Precio por Hora:";
+            // 
+            // textBoxPrecioHora
+            // 
+            textBoxPrecioHora.Location = new Point(149, 89);
+            textBoxPrecioHora.Margin = new Padding(3, 4, 3, 4);
+            textBoxPrecioHora.Name = "textBoxPrecioHora";
+            textBoxPrecioHora.Size = new Size(171, 27);
+            textBoxPrecioHora.TabIndex = 3;
+            // 
             // labelHoras
-            this.labelHoras.AutoSize = true;
-            this.labelHoras.Location = new System.Drawing.Point(30, 110);
-            this.labelHoras.Name = "labelHoras";
-            this.labelHoras.Size = new System.Drawing.Size(75, 15);
-            this.labelHoras.TabIndex = 4;
-            this.labelHoras.Text = "Horas Extras:";
-            
+            // 
+            labelHoras.AutoSize = true;
+            labelHoras.Location = new Point(34, 147);
+            labelHoras.Name = "labelHoras";
+            labelHoras.Size = new Size(94, 20);
+            labelHoras.TabIndex = 4;
+            labelHoras.Text = "Horas Extras:";
+            // 
             // textBoxHoras
-            this.textBoxHoras.Location = new System.Drawing.Point(130, 107);
-            this.textBoxHoras.Name = "textBoxHoras";
-            this.textBoxHoras.Size = new System.Drawing.Size(150, 23);
-            this.textBoxHoras.TabIndex = 5;
-            
+            // 
+            textBoxHoras.Location = new Point(149, 143);
+            textBoxHoras.Margin = new Padding(3, 4, 3, 4);
+            textBoxHoras.Name = "textBoxHoras";
+            textBoxHoras.Size = new Size(171, 27);
+            textBoxHoras.TabIndex = 5;
+            // 
             // botonAgregar
-            this.botonAgregar.Location = new System.Drawing.Point(130, 150);
-            this.botonAgregar.Name = "botonAgregar";
-            this.botonAgregar.Size = new System.Drawing.Size(150, 30);
-            this.botonAgregar.TabIndex = 6;
-            this.botonAgregar.Text = "Agregar Empleado";
-            this.botonAgregar.UseVisualStyleBackColor = true;
-            this.botonAgregar.Click += new System.EventHandler(this.BotonAgregar_Click);
-            
+            // 
+            botonAgregar.Location = new Point(34, 200);
+            botonAgregar.Margin = new Padding(3, 4, 3, 4);
+            botonAgregar.Name = "botonAgregar";
+            botonAgregar.Size = new Size(137, 40);
+            botonAgregar.TabIndex = 6;
+            botonAgregar.Text = "Agregar";
+            botonAgregar.UseVisualStyleBackColor = true;
+            botonAgregar.Click += BotonAgregar_Click;
+            // 
+            // botonModificar
+            // 
+            botonModificar.Location = new Point(183, 200);
+            botonModificar.Margin = new Padding(3, 4, 3, 4);
+            botonModificar.Name = "botonModificar";
+            botonModificar.Size = new Size(137, 40);
+            botonModificar.TabIndex = 7;
+            botonModificar.Text = "Modificar";
+            botonModificar.UseVisualStyleBackColor = true;
+            botonModificar.Click += BotonModificar_Click;
+            // 
+            // botonEliminar
+            // 
+            botonEliminar.Location = new Point(343, 253);
+            botonEliminar.Margin = new Padding(3, 4, 3, 4);
+            botonEliminar.Name = "botonEliminar";
+            botonEliminar.Size = new Size(400, 40);
+            botonEliminar.TabIndex = 8;
+            botonEliminar.Text = "Eliminar Seleccionado";
+            botonEliminar.UseVisualStyleBackColor = true;
+            botonEliminar.Click += BotonEliminar_Click;
+            // 
             // listBoxEmpleados
-            this.listBoxEmpleados.FormattingEnabled = true;
-            this.listBoxEmpleados.ItemHeight = 15;
-            this.listBoxEmpleados.Location = new System.Drawing.Point(300, 27);
-            this.listBoxEmpleados.Name = "listBoxEmpleados";
-            this.listBoxEmpleados.Size = new System.Drawing.Size(350, 154);
-            this.listBoxEmpleados.TabIndex = 7;
-            
+            // 
+            listBoxEmpleados.FormattingEnabled = true;
+            listBoxEmpleados.Location = new Point(343, 36);
+            listBoxEmpleados.Margin = new Padding(3, 4, 3, 4);
+            listBoxEmpleados.Name = "listBoxEmpleados";
+            listBoxEmpleados.Size = new Size(399, 204);
+            listBoxEmpleados.TabIndex = 9;
+            listBoxEmpleados.SelectedIndexChanged += ListBoxEmpleados_SelectedIndexChanged;
+            // 
             // Form1
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 220);
-            this.Controls.Add(this.listBoxEmpleados);
-            this.Controls.Add(this.botonAgregar);
-            this.Controls.Add(this.textBoxHoras);
-            this.Controls.Add(this.labelHoras);
-            this.Controls.Add(this.textBoxSalario);
-            this.Controls.Add(this.labelSalario);
-            this.Controls.Add(this.textBoxNombre);
-            this.Controls.Add(this.labelNombre);
-            this.Name = "Form1";
-            this.Text = "Sistema de Nómina";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(777, 320);
+            Controls.Add(listBoxEmpleados);
+            Controls.Add(botonEliminar);
+            Controls.Add(botonModificar);
+            Controls.Add(botonAgregar);
+            Controls.Add(textBoxHoras);
+            Controls.Add(labelHoras);
+            Controls.Add(textBoxPrecioHora);
+            Controls.Add(labelPrecioHora);
+            Controls.Add(textBoxNombre);
+            Controls.Add(labelNombre);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "Form1";
+            Text = "Sistema de Nómina";
+            Load += Form1_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.TextBox textBoxNombre;
-        private System.Windows.Forms.Label labelSalario;
-        private System.Windows.Forms.TextBox textBoxSalario;
+        private System.Windows.Forms.Label labelPrecioHora;
+        private System.Windows.Forms.TextBox textBoxPrecioHora;
         private System.Windows.Forms.Label labelHoras;
         private System.Windows.Forms.TextBox textBoxHoras;
         private System.Windows.Forms.Button botonAgregar;
+        private System.Windows.Forms.Button botonModificar;
+        private System.Windows.Forms.Button botonEliminar;
         private System.Windows.Forms.ListBox listBoxEmpleados;
     }
 }

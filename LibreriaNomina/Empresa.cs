@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic; // 2.7 Clases predefinidas: List<>
+using System.Collections.Generic;
 
 namespace LibreriaNomina
 {
@@ -20,6 +20,23 @@ namespace LibreriaNomina
         public List<Empleado> ObtenerEmpleados()
         {
             return _listaEmpleados;
+        }
+
+        public Empleado? ObtenerEmpleadoPorIndice(int indice)
+        {
+            if (indice >= 0 && indice < _listaEmpleados.Count)
+            {
+                return _listaEmpleados[indice];
+            }
+            return null;
+        }
+
+        public void EliminarEmpleadoPorIndice(int indice)
+        {
+            if (indice >= 0 && indice < _listaEmpleados.Count)
+            {
+                _listaEmpleados.RemoveAt(indice);
+            }
         }
     }
 }
