@@ -14,7 +14,6 @@ namespace InterfazNomina
             _miEmpresa = new Empresa();
         }
 
-        // Método auxiliar para actualizar el ListBox
         private void ActualizarListaEmpleados()
         {
             listBoxEmpleados.Items.Clear();
@@ -31,13 +30,14 @@ namespace InterfazNomina
             }
         }
 
-        // Limpiar cajas de texto
         private void LimpiarCampos()
         {
             textBoxNombre.Clear();
             textBoxPrecioHora.Clear();
             textBoxHorasTrabajadas.Clear();
             textBoxHorasExtras.Clear();
+            listBoxEmpleados.SelectedIndex = -1;
+            botonAgregar.Enabled = true;
             textBoxNombre.Focus();
         }
 
@@ -135,7 +135,12 @@ namespace InterfazNomina
                     textBoxPrecioHora.Text = empleadoSeleccionado.PrecioPorHora.ToString();
                     textBoxHorasTrabajadas.Text = empleadoSeleccionado.HorasTrabajadas.ToString();
                     textBoxHorasExtras.Text = empleadoSeleccionado.HorasExtras.ToString();
+                    botonAgregar.Enabled = false;
                 }
+            }
+            else
+            {
+                botonAgregar.Enabled = true;
             }
         }
 
