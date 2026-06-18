@@ -11,7 +11,6 @@ namespace LibreriaNomina
         {
             _listaEmpleados = new List<Empleado>();
         }
-
         public void AgregarEmpleado(Empleado nuevoEmpleado)
         {
             _listaEmpleados.Add(nuevoEmpleado);
@@ -21,7 +20,6 @@ namespace LibreriaNomina
         {
             return _listaEmpleados;
         }
-
         public Empleado? ObtenerEmpleadoPorIndice(int indice)
         {
             if (indice >= 0 && indice < _listaEmpleados.Count)
@@ -30,7 +28,6 @@ namespace LibreriaNomina
             }
             return null;
         }
-
         public void EliminarEmpleadoPorIndice(int indice)
         {
             if (indice >= 0 && indice < _listaEmpleados.Count)

@@ -90,6 +90,7 @@ namespace InterfazNomina
             labelHorasExtras.Size = new Size(94, 20);
             labelHorasExtras.TabIndex = 6;
             labelHorasExtras.Text = "Horas Extras:";
+            labelHorasExtras.Click += labelHorasExtras_Click;
             // 
             // textBoxHorasExtras
             // 
@@ -138,7 +139,7 @@ namespace InterfazNomina
             listBoxEmpleados.Location = new Point(343, 27);
             listBoxEmpleados.Margin = new Padding(3, 4, 3, 4);
             listBoxEmpleados.Name = "listBoxEmpleados";
-            listBoxEmpleados.Size = new Size(399, 204);
+            listBoxEmpleados.Size = new Size(534, 204);
             listBoxEmpleados.TabIndex = 11;
             listBoxEmpleados.SelectedIndexChanged += ListBoxEmpleados_SelectedIndexChanged;
             // 
@@ -146,7 +147,7 @@ namespace InterfazNomina
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(777, 333);
+            ClientSize = new Size(903, 333);
             Controls.Add(listBoxEmpleados);
             Controls.Add(botonEliminar);
             Controls.Add(botonModificar);

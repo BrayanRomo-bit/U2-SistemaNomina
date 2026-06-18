@@ -21,11 +21,11 @@ namespace InterfazNomina
             {
                 double salarioTotal = empleadoActual.CalcularSalarioTotal();
                 string mensajeLista = String.Format("{0} - P/Hora: ${1} - Horas: {2}h - Extras: {3}h - Total: ${4}",
-                                                    empleadoActual.Nombre,
-                                                    empleadoActual.PrecioPorHora,
-                                                    empleadoActual.HorasTrabajadas,
-                                                    empleadoActual.HorasExtras,
-                                                    salarioTotal);
+                    empleadoActual.Nombre,
+                    empleadoActual.PrecioPorHora,
+                    empleadoActual.HorasTrabajadas,
+                    empleadoActual.HorasExtras,
+                    salarioTotal);
                 listBoxEmpleados.Items.Add(mensajeLista);
             }
         }
@@ -145,6 +145,11 @@ namespace InterfazNomina
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelHorasExtras_Click(object sender, EventArgs e)
         {
 
         }

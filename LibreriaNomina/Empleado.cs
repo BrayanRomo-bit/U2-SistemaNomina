@@ -8,32 +8,27 @@ namespace LibreriaNomina
         private double _precioPorHora;
         private int _horasTrabajadas;
         private int _horasExtras;
-
         public string Nombre
         {
             get { return _nombre; }
             set { _nombre = value; }
         }
-
         public double PrecioPorHora
         {
             get { return _precioPorHora; }
             set { _precioPorHora = value; }
         }
-
         public int HorasTrabajadas
         {
             get { return _horasTrabajadas; }
             set { _horasTrabajadas = value; }
         }
-
         public int HorasExtras
         {
             get { return _horasExtras; }
             set { _horasExtras = value; }
         }
 
-        
         public Empleado(string nombre, double precioPorHora, int horasTrabajadas, int horasExtras)
         {
             _nombre = nombre;
